@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get "/posts/index" => "posts#index"
-  # ここに投稿詳細ページへのルーティングを追加してください
-  get "/posts/:id" => "posts#show"
-  
+
+  #homeコントローラへ
   get "/" => "home#top"
   get "/about" => "home#about"
+
+  #postsコントローラへ
+  get "/posts/index" => "posts#index"
+  get "/posts/:id" => "posts#show"  ##show.html.erbに:idを渡す
+
 end

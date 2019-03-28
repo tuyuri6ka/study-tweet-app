@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
   
-  # showアクションを追加してください
   def show
+    @post = Post.find_by(id: params[:id])
   end
 end
