@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get "/posts/index" => "posts#index"
+  # ここに投稿詳細ページへのルーティングを追加してください
+  get "/posts/:id" => "posts#show"
+  
   get "/" => "home#top"
   get "/about" => "home#about"
-  get "/posts/index" => "posts#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
