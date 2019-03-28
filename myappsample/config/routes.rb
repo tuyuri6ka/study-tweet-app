@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #postsコントローラへ
   get "/posts/index" => "posts#index"
+  get "/posts/new" => "posts#new"
   get "/posts/:id" => "posts#show"  ##show.html.erbに:idを渡す
 
 end
