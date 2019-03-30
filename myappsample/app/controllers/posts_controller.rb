@@ -11,8 +11,18 @@ class PostsController < ApplicationController
   end
   
   def create
-    # フォームから送信されたデータを受け取り、保存する処理を追加してください
     @post = Post.new(content: params[:content])
+    @post.save
+    redirect_to("/posts/index")
+  end
+
+  def edit
+    @post = Post.find_by(id:params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    @post.content = params[:content]
     @post.save
     redirect_to("/posts/index")
   end
