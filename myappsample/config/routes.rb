@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  get "/users/index" =>"users#index" 
+  #usersコントローラへ
+  get "/users/index" => "users#index"
+  get "/signup" => "users#new"
+  post "/users/create" => "users#create"
+  
   get "/users/:id" => "users#show"
+
   #homeコントローラへ
   get "/" => "home#top"
   get "/about" => "home#about"
