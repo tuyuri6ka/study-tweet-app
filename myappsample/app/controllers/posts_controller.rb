@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     
     if @post.save
       #保存できた場合
+      flash[:notice] = "投稿を編集しました"
       redirect_to("/posts/index")
     else
       #保存できなかった場合
