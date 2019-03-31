@@ -48,8 +48,8 @@ class UsersController < ApplicationController
       render("users/edit")
     end
   end
-  
-  def login_form
+    
+    def login_form
   end
 
   def login
@@ -58,6 +58,9 @@ class UsersController < ApplicationController
       flash[:notice]="ログインしました"
       redirect_to("/posts/index")
     else
+      @error_message ="メールアドレスまたはパスワードが間違っています"
+      @email = params[:email]
+      @password = params[:password]
       render("/users/login_form")
     end
   end
