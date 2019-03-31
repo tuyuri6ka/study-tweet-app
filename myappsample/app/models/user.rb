@@ -5,4 +5,5 @@ class User < ApplicationRecord
   # emailカラムに関するバリデーションを作成してください
   validates :email,{presence:true}
   validates :email,{uniqueness:true}
+  validates :password,{presence:true}
 end

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/users/index" => "users#index"
   get "/signup" => "users#new"
   post "/users/create" => "users#create"
+  get "/login" => "users#login_form"
+  post "/login" => "users#login"
   get "/users/:id/edit" => "users#edit"
   post "/users/:id/update" => "users#update"
 

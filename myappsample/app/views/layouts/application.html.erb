@@ -29,9 +29,13 @@
         <li>
           <%= link_to("新規登録","/signup") %>
         </li>
+        <li>
+          <%= link_to("ログイン","/login") %>
+        </li>
       </ul>
     </header>
-    #flash変数の表示
+
+    <!-- flash変数の表示 -->
     <% if flash[:notice]%>
       <div class="flash">
         <%= flash[:notice]%>
