@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  #authenticate_userにより、参照できない箇所を指定
+  before_action :authenticate_user,{only: [:index,:show,:edit,:update]}
+
   def index
     @users = User.all
   end
