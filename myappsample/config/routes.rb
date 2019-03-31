@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   get "/users/index" => "users#index"
   get "/signup" => "users#new"
   post "/users/create" => "users#create"
+  #ログイン・ログアウト機能
   get "/login" => "users#login_form"
   post "/login" => "users#login"
+  post "/logout" => "users#logout"
+
+  #編集機能
   get "/users/:id/edit" => "users#edit"
   post "/users/:id/update" => "users#update"
 
