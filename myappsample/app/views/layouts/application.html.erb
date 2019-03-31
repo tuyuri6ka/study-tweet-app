@@ -15,11 +15,13 @@
       </div>
       <ul class="header-menus">
 
-        <% if session[:user_id] %>
+      <!-- 現在のユーザー情報をcurrent_user変数に保存 -->
+      <% current_user = User.find_by(id: session[:user_id]) %>
+
+        <% if current_user %>
           <!-- ログイン時の表示 -->
           <li>
-            現在ログインしているユーザーのid:
-            <%= session[:user_id] %>
+            <%= link_to(current_user.name, "/users/#{current_user.id}") %>
           </li>
           <li>
             <%= link_to("投稿一覧","/posts/index") %>
