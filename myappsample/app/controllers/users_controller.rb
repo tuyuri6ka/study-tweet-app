@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :forbid_login_user,{only: [:new, :create, :login_form, :login]}
+
   #authenticate_userにより、参照できない箇所を指定
   before_action :authenticate_user,{only: [:index,:show,:edit,:update]}
 
@@ -55,7 +57,7 @@ class UsersController < ApplicationController
     end
   end
     
-    def login_form
+  def login_form
   end
 
   def login
