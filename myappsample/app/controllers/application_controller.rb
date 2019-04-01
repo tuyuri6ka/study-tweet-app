@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
     #現在のユーザー情報をcurrent_user変数に保存
     def set_current_user
+            #sessionはusers_controllerのloginアクションにて宣言
         @current_user = User.find_by(id: session[:user_id])
     end
 
